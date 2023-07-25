@@ -25,7 +25,7 @@
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
           {
-             sh 'docker push registry.hub.docker.com/sherif/react-app'
+             dockerImage.push("registry.hub.docker.com/sherif/react-app")
           }
         }
       }
