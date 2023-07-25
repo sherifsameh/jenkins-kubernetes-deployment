@@ -12,7 +12,7 @@
    stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build dockerimagename
+          dockerImage = docker.build ("reactapp")
         }
       }
     }
@@ -23,8 +23,8 @@
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ){        
-	  app.push("${BUILD_NUMBER}")
-	    app.push("latest")
+	  dockerImage.push("${BUILD_NUMBER}")
+	   dockerImage.push("latest")
 	  }
         }
       }
