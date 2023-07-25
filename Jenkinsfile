@@ -33,7 +33,7 @@
       }
     }
 
-     stage('Deploy Reach Image to Kubernetes') {
+     stage('Deploy React app Image to Kubernetes') {
       steps {
         sh 'kubectl apply -f deployment.yaml'
         sh 'kubectl apply -f service.yaml'
