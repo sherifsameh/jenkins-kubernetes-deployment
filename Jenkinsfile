@@ -18,7 +18,7 @@
     }
        stage('Pushing Image') {
       environment {
-               registryCredential = 'docker'
+               registryCredential = 'Docker'
            }
       steps{
         script {
