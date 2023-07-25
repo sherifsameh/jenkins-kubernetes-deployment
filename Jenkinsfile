@@ -20,13 +20,10 @@
     stage('Tag Image') {
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
-            {
-             dockerImage.tag("reactappv1")
+             dockerImage.tag("ReactApp")
           }
         }
       }
-    }
     stage('Pushing Image') {
       environment {
                registryCredential = 'Docker'
@@ -35,7 +32,7 @@
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
           {
-             dockerImage.push("reactappv1")
+             dockerImage.push("ReactApp")
           }
         }
       }
