@@ -17,13 +17,6 @@
       }
     }
 
-    stage('Tag Image') {
-      steps{
-        script {
-             dockerImage.tag("sherif/react-app:ReactApp")
-          }
-        }
-      }
     stage('Pushing Image') {
       environment {
                registryCredential = 'Docker'
