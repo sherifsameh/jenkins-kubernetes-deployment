@@ -32,7 +32,7 @@
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
           {
-             dockerImage.push('registry.hub.docker.com/sherif/react-app:ReactApp')
+             dockerImage.push('sherif/react-app:latest')
           }
         }
       }
