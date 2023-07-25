@@ -1,7 +1,7 @@
   pipeline {
 
   environment {
-    dockerimagename = "sherif/react-app:latest"
+    dockerimagename = "sherif/react-app:reactapp"
     dockerImage = ""
   }
 
@@ -12,7 +12,7 @@
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build ("sherif/react-app:latest")
+          dockerImage = docker.build ("sherif/react-app:reactapp")
         }
       }
     }
