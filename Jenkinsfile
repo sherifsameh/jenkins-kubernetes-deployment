@@ -12,7 +12,7 @@
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build + ":$BUILD_NUMBER"
+          dockerImage = docker.build dockerimagename
         }
       }
     }
