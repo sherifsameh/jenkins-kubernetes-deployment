@@ -16,15 +16,6 @@
         }
       }
     }
-
-     stage('Tag image') {
-      steps{
-        script {
-    dockerImage = docker.tag("reactapp:v1")
-      }
-    }
-     }
-
     stage('Pushing Image') {
       environment {
                registryCredential = 'Docker'
@@ -32,9 +23,10 @@
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
-          {
-             dockerImage.push()
-          }
+        {
+			        	app.push("${BUILD_NUMBER}")
+			            app.push("latest")
+			        }
         }
       }
     }
