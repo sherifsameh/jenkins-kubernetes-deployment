@@ -19,7 +19,7 @@
 
      stage('Tag image') {
       steps{
-    dockerImage =docker.tag("reactapp:v1")
+    dockerImage = docker.tag("reactapp:v1")
       }
     }
 
