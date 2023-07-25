@@ -10,7 +10,7 @@
   stages {
  stage('Checkout Source') {
       steps {
-        git 'https://github.com/sherifsameh/jenkins-kubernetes-deployment.git'
+        git 'https://github.com/sherifsameh/jenkins-kubernetes-deployment'
       }
     }
    stage('Build image') {
