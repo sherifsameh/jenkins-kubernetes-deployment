@@ -24,7 +24,7 @@
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("sherif/react-app:ReactApp")
+            dockerImage.push("ReactAppv1")
           }
         }
       }
