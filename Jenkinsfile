@@ -8,11 +8,6 @@
   agent any
 
   stages {
- stage('Checkout Source') {
-      steps {
-        git 'https://github.com/sherifsameh/jenkins-kubernetes-deployment'
-      }
-    }
    stage('Build image') {
       steps{
         script {
