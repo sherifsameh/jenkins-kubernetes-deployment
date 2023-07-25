@@ -20,7 +20,7 @@
     stage('Tag Image') {
       steps{
         script {
-             dockerImage.tag("ReactApp")
+             dockerImage.tag("sherif/react-app:latest" ,"sherif/react-app:ReactApp")
           }
         }
       }
@@ -32,7 +32,7 @@
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
           {
-             dockerImage.push("sherif/react-app:latest")
+             dockerImage.push("ReactApp")
           }
         }
       }
