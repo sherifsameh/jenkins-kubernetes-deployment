@@ -16,10 +16,8 @@
         }
       }
     }
-stage('tag Image') {
-      environment {
-               registryCredential = 'Docker'
-           }
+
+    stage('Tag Image') {
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
