@@ -1,7 +1,7 @@
   pipeline {
 
   environment {
-    dockerimagename = "react-app:latest"
+    dockerimagename = "react-app"
     dockerImage = ""
   }
 
@@ -12,14 +12,14 @@
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build ("react-app:latest")
+          dockerImage = docker.build ("react-app")
         }
       }
     }
      stage('Tag image') {
       steps{
         script {
-          dockerImage = docker.tag ("sherifsameh/react-app:ReactAppv1")
+          docker.tag ('sherifsameh/react-app:ReactAppv1')
         }
       }
     }
