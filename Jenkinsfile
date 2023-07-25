@@ -1,7 +1,7 @@
   pipeline {
 
   environment {
-    dockerimagename = "reactapp"
+    dockerimagename = "sherifsameh/reactapp"
     dockerImage = ""
   }
 
@@ -12,20 +12,20 @@
    stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build ("reactapp")
+          dockerImage = docker.build ("sherifsameh/reactapp")
         }
       }
     }
-    stage('Pushing Image') {
+       stage('Pushing Image') {
       environment {
-               registryCredential = 'Docker'
+               registryCredential = 'dockerhub-credentials'
            }
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ){        
-	  dockerImage.push("${BUILD_NUMBER}")
-	   dockerImage.push("latest")
-	  }
+          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+		    dockerImage.push("${BUILD_NUMBER}")
+            dockerImage.push("latest")
+          }
         }
       }
     }
