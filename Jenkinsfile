@@ -1,7 +1,7 @@
   pipeline {
 
   environment {
-    dockerimagename = "sherif/react-app"
+    dockerimagename = "sherif/react-app:latest"
     dockerImage = ""
   }
 
@@ -20,7 +20,7 @@
     stage('Tag Image') {
       steps{
         script {
-             dockerImage.tag("sherif/react-app:latest" ,"sherif/react-app:ReactApp")
+             dockerImage.tag("sherif/react-app:ReactApp")
           }
         }
       }
@@ -32,7 +32,7 @@
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential )
           {
-             dockerImage.push("ReactApp")
+             dockerImage.push()
           }
         }
       }
