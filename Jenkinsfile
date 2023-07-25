@@ -1,7 +1,7 @@
   pipeline {
 
   environment {
-    dockerimagename = "bravinwasike/react-app"
+    dockerimagename = "sherif/react-app"
     dockerImage = ""
   }
 
@@ -24,7 +24,7 @@
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("reactapp:latest")
+            dockerImage.push("sherif/react-app:ReactApp")
           }
         }
       }
