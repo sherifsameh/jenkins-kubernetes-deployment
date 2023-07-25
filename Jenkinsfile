@@ -9,15 +9,17 @@
 
   stages {
 
-   stage('Build Docker image') {
-            steps {
-                echo "-=- build Docker image -=-"
-                sh "docker build -t reactapp:v1 ."
-            }
+   stage('Build image') {
+      steps{
+        script {
+          dockerImage = docker.build dockerimagename
         }
+      }
+    }
+
      stage('Tag image') {
       steps{
-        sh "docker tag reactapp:latest  sherifsameh/reactapp:v1"
+    docker.build ("reactapp:latest  sherifsameh/reactapp:v1")
       }
     }
 
