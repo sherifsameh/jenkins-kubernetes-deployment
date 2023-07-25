@@ -24,7 +24,6 @@
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            sh 'docker tag react-app:latest  registry.hub.docker.com/bravinwasike/react-app:ReactApp'
              sh 'docker push registry.hub.docker.com/sherif/react-app:latest'
           }
         }
