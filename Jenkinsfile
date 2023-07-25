@@ -12,7 +12,7 @@
    stage('Build Docker image') {
             steps {
                 echo "-=- build Docker image -=-"
-                sh "docker build -t sherifsameh/reactapp:v1 ."
+                sh "docker build -t reactapp:v1 ."
             }
         }
      stage('Tag image') {
