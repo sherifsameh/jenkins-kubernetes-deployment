@@ -29,11 +29,10 @@
       }
     }
 
-    stage('Deploying React.js container to Kubernetes') {
+     stage('Deploy Reach Image to Kubernetes') {
       steps {
-        script {
-          kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
-        }
+        sh 'kubectl apply -f deployment.yaml'
+        sh 'kubectl apply -f service.yaml'
       }
     }
   }
