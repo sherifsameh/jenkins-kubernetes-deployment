@@ -19,9 +19,11 @@
 
      stage('Tag image') {
       steps{
+        script {
     dockerImage = docker.tag("reactapp:v1")
       }
     }
+     }
 
     stage('Pushing Image') {
       environment {
